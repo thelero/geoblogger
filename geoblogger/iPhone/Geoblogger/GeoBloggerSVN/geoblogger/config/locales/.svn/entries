@@ -1,0 +1,40 @@
+8
+
+dir
+6
+svn://Ivan@geoblogger.stanford.edu/SVNRepository/geoblogger/config/locales
+svn://Ivan@geoblogger.stanford.edu/SVNRepository
+
+
+
+2009-04-16T08:15:08.875000Z
+6
+jorge
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+06d8ca27-bd68-c74e-986e-6dd67f24651b
+
+en.yml
+file
+
+
+
+
+2009-04-17T23:43:25.000000Z
+16efc327461a7bdac033b4897171b5c6
+2009-04-16T08:15:08.875000Z
+6
+jorge
+

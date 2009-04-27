@@ -1,0 +1,7 @@
+<h1>Event Info</h1>
+<%= render :partial => "event", :object => @event %>
+<%= link_to 'Edit', edit_event_path(@event) %> | <%= link_to 'All Events', events_path %>
+<h2>Event Posts</h2>
+<% for post in @posts do %>
+  <%= render :partial => "post/post", :object => post %>
+<% end %>

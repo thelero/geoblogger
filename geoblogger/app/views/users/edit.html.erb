@@ -1,0 +1,40 @@
+<h1>Editing user</h1>
+
+<% form_for(@user) do |f| %>
+  <%= f.error_messages %>
+
+  <fieldset> 
+  <legend>Edit User Details</legend>
+  <p>
+    <%= f.label :first_name %><br />
+    <%= f.text_field :first_name %>
+  </p>
+  <p>
+    <%= f.label :last_name %><br />
+    <%= f.text_field :last_name %>
+  </p>
+  <p>
+    <%= f.label :email_address %><br />
+    <%= f.text_field :email_address %>
+  </p>
+  <p>
+    <%= f.label :male %>   <%= f.radio_button :gender, "male" %>
+    <%= f.label :female %> <%= f.radio_button :gender, "female" %>
+    <script type="text/javascript">
+    var element
+      if ("<%= @user.gender %>" == "male"){
+        element = document.getElementById("user_gender_male");
+      } else {
+        element = document.getElementById("user_gender_female");
+      }
+      element.checked = true;
+    </script>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+  </fieldset>
+<% end %>
+
+<%= link_to 'Show', @user %> |
+<%= link_to 'All Users', users_path %>

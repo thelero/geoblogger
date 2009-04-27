@@ -1,0 +1,10 @@
+<h1>User Info</h1>
+<%= render :partial => "user", :object => @user %>
+<%= link_to 'Edit', edit_user_path(@user) %> | <%= link_to 'All Users', users_path %>
+<h2>Events and Posts</h2>
+<% for event in @events do %>
+  <%= render :partial => "events/event", :object => event %>
+  <% for post in event.posts do %>
+    <%= render :partial => "posts/post", :object => post %>
+  <% end %>
+<% end %>

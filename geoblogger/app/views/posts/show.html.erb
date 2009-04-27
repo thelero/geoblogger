@@ -1,0 +1,21 @@
+<% content_for :script do %>
+  <script type="text/javascript">
+  function initialize() {
+    if (GBrowserIsCompatible()) {
+      var map = new GMap2(document.getElementById("map_canvas"));
+      map.setCenter(new GLatLng(<%= @post.latitude %>, <%= @post.longitude %>), 13);
+      map.setUIToDefault();
+
+      var marker = new GLatLng(<%= @post.latitude %>, <%= @post.longitude %>);
+      map.addOverlay(new GMarker(marker));
+    }
+  }
+  </script>
+<% end %>
+
+<h1>Post Info</h1>
+<%= render :partial => "post", :object => @post %>
+<%= link_to 'Edit', edit_post_path(@post) %> | <%= link_to 'All Posts', posts_path %>
+<h2>Event Info</h2>
+<%= render :partial => "events/event", :object => @post.event %>
+<div id="map_canvas" style="width: 500px; height: 300px"></div>

@@ -1,0 +1,47 @@
+<!DOCTYPE html "-//W3C//DTD XHTML 1.0 Strict//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    
+    <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=ABQIAAAAD0J60UMaHNp91RMrrKVWXhT2yXp_ZAY8_ufC3CFXhHIE1NvwkxR-OX9KwlindKYPmyT3kxe6litu6w&sensor=false" type="text/javascript"></script>
+    
+    <script type="text/javascript">
+    
+    var map;
+    
+    function initialize() {
+      if (GBrowserIsCompatible()) {
+        map = new GMap2(document.getElementById("map_canvas"));
+        map.setCenter(new GLatLng(37.4419, -122.1419), 13);
+        map.setUIToDefault();
+        map.openInfoWindow(map.getCenter(), document.createTextNode("Hello, world"));
+        GEvent.addListener(map, "click", function(overlay, latlng) {
+          alert(latlng.lat());
+        });
+        // map.setMapType(G_SATELLITE_3D_MAP);
+        
+      // Add 10 markers to the map at random locations
+        var bounds = map.getBounds();
+        var southWest = bounds.getSouthWest();
+        var northEast = bounds.getNorthEast();
+        var lngSpan = northEast.lng() - southWest.lng();
+        var latSpan = northEast.lat() - southWest.lat();
+        for (var i = 0; i < 10; i++) {
+          var point = new GLatLng(southWest.lat() + latSpan * Math.random(), southWest.lng() + lngSpan * Math.random());
+          map.addOverlay(new GMarker(point));
+        }
+      }
+    }
+    
+    function animate() {    
+      map.panTo(new GLatLng(37.4569, -122.1569));
+    }
+    </script>
+  
+  </head>
+  
+  <body onload="initialize()" onunload="GUnload()">
+    <div id="map_canvas" style="width: 500px; height: 500px"></div>
+  </body>
+</html>

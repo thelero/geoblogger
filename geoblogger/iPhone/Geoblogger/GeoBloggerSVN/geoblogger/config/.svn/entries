@@ -1,0 +1,85 @@
+8
+
+dir
+6
+svn://Ivan@geoblogger.stanford.edu/SVNRepository/geoblogger/config
+svn://Ivan@geoblogger.stanford.edu/SVNRepository
+
+
+
+2009-04-16T08:15:08.875000Z
+6
+jorge
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+06d8ca27-bd68-c74e-986e-6dd67f24651b
+
+locales
+dir
+
+routes.rb
+file
+
+
+
+
+2009-04-17T23:43:25.000000Z
+53f38ce8526821ed084c69658732ee85
+2009-04-16T08:15:08.875000Z
+6
+jorge
+
+database.yml
+file
+
+
+
+
+2009-04-17T23:43:25.000000Z
+1f693015f522f845e8ede58548779531
+2009-04-16T08:15:08.875000Z
+6
+jorge
+
+boot.rb
+file
+
+
+
+
+2009-04-17T23:43:25.000000Z
+1375ffc0d162a8ed845e9e9d100b7658
+2009-04-16T08:15:08.875000Z
+6
+jorge
+
+initializers
+dir
+
+environment.rb
+file
+
+
+
+
+2009-04-17T23:43:25.000000Z
+fb6cf55397092761c3d06fee140ee5b8
+2009-04-16T08:15:08.875000Z
+6
+jorge
+
+environments
+dir
+

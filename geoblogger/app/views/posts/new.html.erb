@@ -1,0 +1,68 @@
+<% content_for :script do %>
+  <script type="text/javascript">
+  var map;
+  
+  function initialize() {
+    if (GBrowserIsCompatible()) {
+      map = new GMap2(document.getElementById("map_canvas"));
+      map.setCenter(new GLatLng(39.833333, -98.583333), 13);
+      map.setUIToDefault();
+      map.setZoom(3);
+      
+      var marker = new GMarker(new GLatLng(39.833333, -98.583333));
+      map.addOverlay(marker);
+      marker.hide();
+      
+      GEvent.addListener(map, "click", function(overlay, latlng) {
+        var lat = document.getElementById("post_latitude");
+        var lng = document.getElementById("post_longitude");
+        lat.value = latlng.lat();
+        lng.value = latlng.lng();
+        marker.setLatLng(latlng);
+        marker.show();
+      });
+    }
+  }
+  </script>
+<% end %>
+
+
+<% form_for(@post) do |f| %> 
+  <%= f.error_messages %> 
+
+  <fieldset> 
+  <legend>Enter User Details</legend>
+  <p> 
+    <%= f.label :title %>: 
+    <%= f.text_field :title, :size => 40 %> 
+  </p>
+  <p> 
+    <%= f.label :description %>: 
+    <%= f.text_area :description, :rows => 5, :cols => 40 %> 
+  </p>
+  <p> 
+    <%= f.label :location %>: 
+    <%= f.text_field :location %> 
+  </p>
+  <p> 
+    <%= f.label :latitude %>: 
+    <%= f.text_field :latitude %> 
+  </p>
+  <p> 
+    <%= f.label :longitude %>: 
+    <%= f.text_field :longitude %> 
+  </p>
+  <p> 
+    <%= f.label :user_id %>: 
+    <%= f.text_field :user_id %> 
+  </p>
+  <p> 
+    <%= f.label :event_id %>: 
+    <%= f.text_field :event_id %> 
+  </p>
+  <p> 
+    <%= f.submit "Add Post", :class => "submit" %> 
+  </p> 
+  </fieldset> 
+<% end %>
+<div id="map_canvas" style="width: 500px; height: 300px"></div>

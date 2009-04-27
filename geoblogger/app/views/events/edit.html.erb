@@ -1,0 +1,27 @@
+<h1>Editing event</h1>
+
+<% form_for(@event) do |f| %> 
+  <%= f.error_messages %> 
+
+  <fieldset> 
+  <legend>Edit Event Details</legend>
+  <p> 
+    <%= f.label :title %>: 
+    <%= f.text_field :title, :size => 40 %> 
+  </p>
+  <p> 
+    <%= f.label :description %>: 
+    <%= f.text_area :description %> 
+  </p>
+  <p> 
+    <%= f.label :location %>: 
+    <%= f.text_field :location %> 
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+  </fieldset>
+<% end %>
+
+<%= link_to 'Show', @event %> |
+<%= link_to 'All Events', events_path %>

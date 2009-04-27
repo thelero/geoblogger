@@ -1,0 +1,33 @@
+<% form_for(@user) do |f| %> 
+  <%= f.error_messages %> 
+
+  <fieldset> 
+  <legend>Enter User Details</legend>
+  <p> 
+    <%= f.label :first_name %>: 
+    <%= f.text_field :first_name, :size => 40 %> 
+  </p>
+  <p> 
+    <%= f.label :last_name %>: 
+    <%= f.text_field :last_name, :size => 40 %> 
+  </p>
+  <p> 
+    <%= f.label :email_address %>: 
+    <%= f.text_field :email_address %> 
+  </p>
+  <p>
+    <%= f.label :male %>   <%= f.radio_button :gender, "male" %>
+    <%= f.label :female %> <%= f.radio_button :gender, "female" %>
+  <p> 
+    <%= f.label :user_password, 'Password' %>: 
+    <%= f.password_field :password, :size => 40 %> 
+  </p> 
+  <p> 
+    <%= f.label :user_password_confirmation, 'Confirm' %>: 
+    <%= f.password_field :password_confirmation, :size => 40 %> 
+  </p>
+  <p> 
+    <%= f.submit "Add User", :class => "submit" %> 
+  </p> 
+  </fieldset> 
+<% end %>
